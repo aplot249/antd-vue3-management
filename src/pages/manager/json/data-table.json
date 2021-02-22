@@ -1,0 +1,47 @@
+{
+    "checkuser":[
+        {
+            "title": "账号",
+            "dataIndex": "id",
+            "key": "id"
+    
+        },
+        {
+            "title": "姓名",
+            "dataIndex": "name",
+            "key": "name"
+    
+        },
+        {
+            "title": "性别",
+            "dataIndex": "sex",
+            "key": "sex"
+    
+        },
+        {
+            "title": "年龄",
+            "dataIndex": "age",
+            "key": "age"
+        },
+        {
+            "title": "手机号",
+            "dataIndex": "microphone",
+            "key": "microphone"
+        },
+        {
+            "title": "账号角色",
+            "dataIndex": "role",
+            "key": "role"
+        },
+        {
+            "title": "最近登录时间",
+            "dataIndex": "resentTime",
+            "key": "role"
+        },
+        {
+            "title": "状态",
+            "key": "status",
+            "dataIndex": "status"
+        }
+    ]
+}

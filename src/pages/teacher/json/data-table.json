@@ -1,0 +1,43 @@
+{
+    "mycourse":[
+        {
+          "dataIndex": "courseName",
+          "key": "courseName",
+          "title": "课程名" 
+        },
+        {
+          "dataIndex": "courseTime",
+          "key": "courseTime",
+          "title": "发布日期"
+        },
+       
+        {
+          "dataIndex": "courseType",
+          "key": "courseType",
+          "title": "课程类型",
+          "slots": { "customRender": "tags" }
+        },
+        {
+          "dataIndex": "coursePrice",
+          "key": "coursePrice",
+          "title": "课程单价"
+        },
+        {
+          "dataIndex": "courseSellNum",
+          "key": "courseSellNum",
+          "title": "课程销量"
+        },
+        {
+          "dataIndex": "courseStatus",
+          "key": "courseStatus",
+          "title": "课程状态"
+        },
+        {
+          "title": "",
+          "key": "action",
+          "slots": { 
+            "customRender": "action"
+          }
+        }
+      ]
+}

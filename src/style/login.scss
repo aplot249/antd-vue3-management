@@ -1,0 +1,21 @@
+#login{
+    margin: 0 0;
+    height:100%;
+    background:url("../assets/login-background.jpg")no-repeat; 
+    background-size: cover;
+    .login-card{
+        padding-top:250px;
+        align-items: center;
+        width: 400px;
+        margin-left: 70%;
+        //margin-right: 20px;
+        .login-card-input{
+           margin: 5px auto;
+           font-size: 15px;
+            .login-card-input_account,.login-card-input_passwd,.login-card-input_role{
+                width: 300px;
+            }
+        }
+    }
+  
+}

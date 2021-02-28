@@ -4,13 +4,18 @@ import token from '../store/modules/token'
 
 import tabbar from '../store/modules/tabbar'
 
-
 import topbar from '../store/modules/topbar'
+
+import info from '../store/modules/info'
+
+import courseList from '../store/modules/courseList'
 
 export default createStore({
     modules:{
         token:token,
         tabbar:tabbar,
-        topbar:topbar
+        topbar:topbar,
+        info:info,
+        courseList:courseList
     },
 })

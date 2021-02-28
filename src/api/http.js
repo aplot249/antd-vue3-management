@@ -17,7 +17,7 @@ import store from '../store/index';
 
 axios.defaults.baseURL = 'http://localhost:3001/';  //默认设置为本地中间接口地址
 
-axios.defaults.timeout = 10000;     //2.通过axios.defaults.timeout设置默认的请求超时时间
+axios.defaults.timeout = 30000;     //2.通过axios.defaults.timeout设置默认的请求超时时间
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';    //3.设置POST请求头
 

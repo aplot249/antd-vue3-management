@@ -13,14 +13,14 @@
 
 
         <a-select
-            placeholder="请选择搜索依据"
+            placeholder="请选择排列依据"
             class="course-search-bar_select"
            >
           <a-select-option value="Option1-1">
-            Option1-1
+            按课程名
           </a-select-option>
           <a-select-option value="Option1-2">
-            Option1-2
+            按销量
           </a-select-option>
         </a-select>
           <a-input-search
@@ -35,13 +35,12 @@
 
   </div>
       <div class="course-table">
-      <a-table :columns="columns" :data-source="data">
+      <a-table :columns="columns" :data-source="data" rowKey="courseNo">
          
-          <template #tags="{ text: tags }">
+          <template #tags="{ text: tag }">
             <span>
               <a-tag
-                v-for="tag in tags"
-                :key="tag"
+              
                 color="green"
               >
                 {{ tag }}
@@ -60,13 +59,13 @@
                 <template #overlay>
                   <a-menu>
                     <a-menu-item>
-                      <a-button type="link">1st menu item</a-button>
+                      <a-button type="link">信息修改</a-button>
                     </a-menu-item>
                     <a-menu-item>
-                      <a-button type="link">2nd menu item</a-button>
+                      <a-button type="link">上传视频</a-button>
                     </a-menu-item>
                     <a-menu-item>
-                     <a-button type="link">3rd menu item</a-button>
+                     <a-button type="link">下架课程</a-button>
                     </a-menu-item>
                   </a-menu>
                 </template>
@@ -85,7 +84,7 @@ import { defineComponent,ref } from 'vue';
 
 import json from '../json/data-table.json'
 
-
+import store from '../../../store/index'
 
 export default defineComponent({
   setup() {
@@ -93,35 +92,7 @@ export default defineComponent({
 
     const search = ref('')
 
-    const data = [
-      {
-        key: '1',
-        courseName: '2020年考研数学全程班',
-        courseTime: '2020-01-01 ',
-        coursePrice: '25￥',
-        courseSellNum:10,
-        courseStatus:'已上架',
-        courseType: ['数学一'],
-      },
-      {
-        key: '2',
-        courseName: '2020年考研寒假专题',
-        courseTime: '2020-01-01 ',
-        coursePrice: '25￥',
-        courseSellNum:10,
-        courseStatus:'已上架',
-        courseType: ['数学一'],
-      },
-      {
-        key: '3',
-        courseName: '数一专题讲座',
-        courseTime: '2020-01-01 ',
-        coursePrice: '25￥',
-        courseSellNum:10,
-        courseStatus:'已上架',
-        courseType: ['数学一'],
-      },
-    ]; 
+    const data = ref(store.state.courseList.courseList); 
 
     return {
       data,

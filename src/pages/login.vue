@@ -43,10 +43,17 @@
 </template>
 <script>
 import { login } from '../api/index.js'
+
 import { message } from 'ant-design-vue'
 
 import store from '../store/index'
+
 import {defineComponent, reactive ,ref ,toRefs} from 'vue'
+
+import { useRouter } from 'vue-router'//因为setup访问不到this，所以使用vue-router4新的compsitionAPI
+
+
+
 export default defineComponent({
     name:'Login',
     setup(){
@@ -55,10 +62,11 @@ export default defineComponent({
             password:'',
             role:'教师'
         })
+
         const spinning = ref(false)
-        //let me = this
-        // const account=ref('')
-        // const password=ref('')
+
+        const router = useRouter()
+
         function clickLogin(){
             //登录
             if(state.account === ''){
@@ -70,20 +78,28 @@ export default defineComponent({
                 // console.log(spinning)
                 let formdata = {    //数据部分
                     userid:state.account,
-                    password:state.password
+                    password:state.password,
+                    role:state.role
                 }
-           
                 login(formdata).then(res => {
                     // 获取数据成功后的其他操作
+                    console.log(res)
                     if(res.code === 200){   //登陆成功后
                         store.state.token.token = res.data  //设置Vuex的token
                         localStorage.setItem('token', store.state.token.token);//保存到localStorage
-
+                        
                         spinning.value = false
+                        if(state.role === "教师"){
+                            router.replace("/teacher")
+                        }else{
+                            router.replace("/manager")
+                        }
                         console.log(localStorage.getItem('token'))
+
                     }else{
                         message.error(res.msg);
                         spinning.value = false
+
                         console.log(res.msg)
                     }
                     console.log(store.state.token.token)

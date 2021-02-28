@@ -10,11 +10,11 @@
           @close="onClose"
         >
         <div class="info-drawer-welcome">
-            <a-avatar class="info-drawer-welcome_avatar" src="src/assets/Avatar.jpg"  :size="60"></a-avatar>
+            <a-avatar class="info-drawer-welcome_avatar" :src="imgSrc"  :size="60"></a-avatar>
             <div class="info-drawer-welcome_text">
-                <div class="info-drawer-welcome_text_title">欢迎您,教师用户</div>
-                <div class="info-drawer-welcome_text_content">上次登陆时间:2020-01-01</div>
-                <div class="info-drawer-welcome_text_content">上次登陆时间:2020-01-01</div>
+                <div class="info-drawer-welcome_text_title">欢迎您,{{userName}}</div>
+                <div class="info-drawer-welcome_text_content">上次登陆时间:{{lastLogin}}</div>
+                <div class="info-drawer-welcome_text_content">本次登陆时间:{{nowLogin}}</div>
             </div>
         </div>
          
@@ -50,7 +50,7 @@
 
            
              <div style="margin-left:40px;text-align:center;">
-                <a-button shape="circle" size="large" >
+                <a-button shape="circle" size="large" @click="clickLogout">
                     <template #icon><LogoutOutlined /></template>
                 </a-button>
                 <div style="font-size:10px;color:#666;margin-top:10px;">退出登录</div>
@@ -65,7 +65,13 @@
 <script>
 import { defineComponent, ref ,watch } from 'vue'
 
+import { notification } from 'ant-design-vue';
+
 import { MailOutlined, QqOutlined, AppstoreOutlined, SettingOutlined,SearchOutlined,LogoutOutlined } from '@ant-design/icons-vue'
+
+import { logout } from '../../api/index.js'
+
+import { useRouter } from 'vue-router'//因为setup访问不到this，所以使用vue-router4新的compsitionAPI
 
 export default defineComponent({
     name: '',
@@ -78,6 +84,23 @@ export default defineComponent({
         LogoutOutlined
     },
     props:{
+        userName:{
+            type:String,
+            default:""
+        },
+        lastLogin:{
+            type:String,
+            default:""
+        },
+        nowLogin:{
+            type:String,
+            default:""
+        },
+        imgSrc:{
+             type:String,
+             default:""
+        },
+
         //抽屉所在方位---默认左边
         placement:{
             type:String,
@@ -91,15 +114,27 @@ export default defineComponent({
     },
     setup(props,context) {
 
+
+        const router = useRouter()
+
         //点击外界进行关闭触发的回调方法
         const onClose = () => {
           //在组件内部不能修改props，会报错"target is read only"
           //此处使用自定义事件，对组件外部的值进行修改，从而达到修改props的值且不至于失去其响应式的特性
            context.emit("onClose")
-        };
+        }
 
      
-        
+        const clickLogout = () =>{
+            logout().then(res=>{
+                console.log(res);
+                router.replace("/")  
+                notification["success"]({
+                    message: '您已成功退出登录',
+                }); 
+            })
+            console.log("退出登录")
+        }
 
         const handleClick = e => {
             console.log('click', e);
@@ -110,6 +145,7 @@ export default defineComponent({
         return {
             onClose,
             handleClick,
+            clickLogout
         }
     }
 });

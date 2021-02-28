@@ -10,6 +10,8 @@ import router from './route'            //引入路由模块
 
 import store from './store/index'
 
+import 'default-passive-events' //解决Added non-passive event listener to a scroll-blocking 'mousewheel' event.告警
+
 const app = createApp(App);
 
 app.config.productionTip = false;

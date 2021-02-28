@@ -30,7 +30,7 @@
               />
           </a-col>
           <a-col :span="1" style="height:100%">
-              <a-avatar src="src/assets/Avatar.jpg"  @click="showDrawer" :size="44">
+              <a-avatar :src="imgSrc"  @click="showDrawer" :size="44">
                 
               </a-avatar>
               
@@ -42,6 +42,10 @@
           @onClose="onClose"
           :placement="placement"
           :visible="visible"
+          :imgSrc="imgSrc"
+          :userName="info.userName"
+          :lastLogin="info.lastLogin"
+          :nowLogin="info.nowLogin"
         />
   </div>
 </template>
@@ -59,6 +63,22 @@ export default defineComponent({
       name: '',
       components:{
         infodrawer
+      },
+      props:{
+        imgSrc:{
+          type:String,
+          default:""
+        },
+        info:{
+          type:Object,
+          default(){
+            return {
+              userName:"",
+              lastLogin:"",
+              nowLogin:""
+            }
+          }
+        }
       },
       setup() {
 

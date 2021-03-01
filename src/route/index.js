@@ -7,6 +7,10 @@ export const constantRoutes = [
         hidden: true
     },
     {
+        path:'/editinfo',
+        component: () => import('../pages/teacher/course/mycourse/editinfo.vue'),
+    },
+    {
         path: '/teacher',
         component: () => import('../pages/teacher/main.vue'),
         hidden: true,
@@ -30,6 +34,11 @@ export const constantRoutes = [
                     {
                         path:'mycourse',
                         component: () => import('../pages/teacher/course/mycourse.vue'),
+                    },
+                    {
+                        path:'editinfo/:courseNo',
+                        component: () => import('../pages/teacher/course/mycourse/editinfo.vue'),
+                        props:true
                     },
                     {
                         path:'checkorders',

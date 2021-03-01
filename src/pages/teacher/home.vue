@@ -17,10 +17,11 @@
 
       <div >
     <a-card title="我的课程" hoverable style="width: 350px;margin-left: 40px">
-      <a-spin tip="Loading..." :spinning="courseListSpinning">
-          <template #extra>
+     <template #extra>
             <a-button type="link" @click="moreCourse" block>更多</a-button>
           </template>
+      <a-spin tip="Loading..." :spinning="courseListSpinning">
+         
           <a-list item-layout="vertical" :data-source="data">
             <template #renderItem="{ item }">
               <a-list-item>

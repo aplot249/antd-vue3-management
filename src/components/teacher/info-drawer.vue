@@ -132,6 +132,7 @@ export default defineComponent({
                 notification["success"]({
                     message: '您已成功退出登录',
                 }); 
+                localStorage.removeItem("token");
             })
             console.log("退出登录")
         }

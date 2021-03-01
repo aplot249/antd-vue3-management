@@ -59,13 +59,13 @@
                 <template #overlay>
                   <a-menu>
                     <a-menu-item>
-                      <a-button type="link">信息修改</a-button>
+                      <a-button type="link" @click="clickOption(record,0)">信息修改</a-button>
                     </a-menu-item>
                     <a-menu-item>
-                      <a-button type="link">上传视频</a-button>
+                      <a-button type="link" @click="clickOption(record,1)">上传视频</a-button>
                     </a-menu-item>
                     <a-menu-item>
-                     <a-button type="link">下架课程</a-button>
+                     <a-button type="link"  @click="clickOption(record,2)">删除课程</a-button>
                     </a-menu-item>
                   </a-menu>
                 </template>
@@ -86,6 +86,8 @@ import json from '../json/data-table.json'
 
 import store from '../../../store/index'
 
+import { useRouter } from 'vue-router'//因为setup访问不到this，所以使用vue-router4新的compsitionAPI
+
 export default defineComponent({
   setup() {
     const columns = json.mycourse
@@ -94,10 +96,25 @@ export default defineComponent({
 
     const data = ref(store.state.courseList.courseList); 
 
+    const router = useRouter()
+
+
+
+    const clickOption =(record,no)=>{
+
+      console.log(record)
+      console.log(no)
+      if(no === 0){
+          router.replace("/teacher/course/editinfo/"+record.courseNo)
+      }
+      
+    }
+
     return {
       data,
       columns,
-      search
+      search,
+      clickOption
     };
   },
   components: {

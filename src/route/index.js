@@ -11,6 +11,10 @@ export const constantRoutes = [
         component: () => import('../pages/teacher/course/mycourse/editinfo.vue'),
     },
     {
+        path:'/addlesson',
+        component: () => import('../pages/teacher/course/mycourse/addlesson.vue'),
+    },
+    {
         path: '/teacher',
         component: () => import('../pages/teacher/main.vue'),
         hidden: true,
@@ -38,6 +42,11 @@ export const constantRoutes = [
                     {
                         path:'editinfo/:courseNo',
                         component: () => import('../pages/teacher/course/mycourse/editinfo.vue'),
+                        props:true
+                    },
+                    {
+                        path:'addlesson/:courseNo',
+                        component: () => import('../pages/teacher/course/mycourse/addlesson.vue'),
                         props:true
                     },
                     {

@@ -106,6 +106,8 @@ export default defineComponent({
       console.log(no)
       if(no === 0){
           router.replace("/teacher/course/editinfo/"+record.courseNo)
+      }else if(no === 1){
+          router.replace("/teacher/course/addlesson/"+record.courseNo)
       }
       
     }

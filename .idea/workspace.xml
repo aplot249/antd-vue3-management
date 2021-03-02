@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e236fbd8-fc88-4c43-8a8f-844e108e9384" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e236fbd8-fc88-4c43-8a8f-844e108e9384" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +51,7 @@
       <workItem from="1613994883830" duration="715000" />
       <workItem from="1614507881205" duration="998000" />
       <workItem from="1614518154646" duration="11000" />
+      <workItem from="1614599810396" duration="155000" />
     </task>
     <task id="LOCAL-00001" summary="本次commit的内容：&#10;1.结合服务端接口整合了登录以及教师端的登出功能&#10;2.静态图片资源由本地模拟的方式转变为云端访问，url由服务端提供&#10;3.结合服务端接口整合了显示所有课程列表以及主页一些数据&#10;4.对之前的代码做了一些优化">
       <created>1614508119667</created>
@@ -61,7 +60,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614508119667</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="本次commit的内容：&#10;1.增加了教师编辑课程基本信息页面&#10;2.修改了主页面中部分代码，解决了卡片右上角按钮不显示的问题">
+      <created>1614599944090</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614599944090</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,13 +87,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="本次commit的内容：&#10;1.结合服务端接口整合了登录以及教师端的登出功能&#10;2.静态图片资源由本地模拟的方式转变为云端访问，url由服务端提供&#10;3.结合服务端接口整合了显示所有课程列表以及主页一些数据&#10;4.对之前的代码做了一些优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="本次commit的内容：&#10;1.结合服务端接口整合了登录以及教师端的登出功能&#10;2.静态图片资源由本地模拟的方式转变为云端访问，url由服务端提供&#10;3.结合服务端接口整合了显示所有课程列表以及主页一些数据&#10;4.对之前的代码做了一些优化" />
+    <MESSAGE value="本次commit的内容：&#10;1.增加了教师编辑课程基本信息页面&#10;2.修改了主页面中部分代码，解决了卡片右上角按钮不显示的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="本次commit的内容：&#10;1.增加了教师编辑课程基本信息页面&#10;2.修改了主页面中部分代码，解决了卡片右上角按钮不显示的问题" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2478" y="107" key="CommitChangelistDialog2" timestamp="1614508116270">
+    <state x="2478" y="107" key="CommitChangelistDialog2" timestamp="1614599941778">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2478" y="107" key="CommitChangelistDialog2/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1614508116270" />
+    <state x="2478" y="107" key="CommitChangelistDialog2/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1614599941778" />
     <state x="2709" y="437" key="Github.ShareDialog" timestamp="1613995223398">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -96,9 +103,9 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2675" y="244" key="Github.UntrackedFilesDialog/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1613995498500" />
-    <state x="2472" y="273" key="Vcs.Push.Dialog.v2" timestamp="1614517849508">
+    <state x="2472" y="273" key="Vcs.Push.Dialog.v2" timestamp="1614599949317">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2472" y="273" key="Vcs.Push.Dialog.v2/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1614517849508" />
+    <state x="2472" y="273" key="Vcs.Push.Dialog.v2/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1614599949317" />
   </component>
 </project>
